@@ -13,14 +13,12 @@ class ViewController: UIViewController {
     let plusButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo").withRenderingMode(.alwaysOriginal), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     let emailTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email"
-        tf.translatesAutoresizingMaskIntoConstraints = false
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
@@ -30,7 +28,6 @@ class ViewController: UIViewController {
     let userNameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Username"
-        tf.translatesAutoresizingMaskIntoConstraints = false
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
@@ -41,7 +38,6 @@ class ViewController: UIViewController {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.isSecureTextEntry = true
-        tf.translatesAutoresizingMaskIntoConstraints = false
         tf.backgroundColor = UIColor(white: 0, alpha: 0.03)
         tf.borderStyle = .roundedRect
         tf.font = UIFont.systemFont(ofSize: 14)
@@ -62,11 +58,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(plusButton)
+        
+        plusButton.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 140, height: 140)
  
-        plusButton.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        plusButton.widthAnchor.constraint(equalToConstant: 140).isActive = true
         plusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        plusButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         
         setupInputFields()
         
