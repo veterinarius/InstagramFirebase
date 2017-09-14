@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0EF70C66BCD0AA442B0961C1 /* Pods_InstagramFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB533906FFF3D98BF13181 /* Pods_InstagramFirebase.framework */; };
+		5A529DDA1F6B08DA009F2EE5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529DD91F6B08DA009F2EE5 /* MainTabBarController.swift */; };
+		5A529DDC1F6B0B2F009F2EE5 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */; };
 		5AA885041F532B4E00E12FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA885031F532B4E00E12FD5 /* AppDelegate.swift */; };
 		5AA885061F532B4E00E12FD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA885051F532B4E00E12FD5 /* ViewController.swift */; };
 		5AA885091F532B4E00E12FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA885071F532B4E00E12FD5 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		1AEB533906FFF3D98BF13181 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A529DD91F6B08DA009F2EE5 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		5AA885001F532B4E00E12FD5 /* InstagramFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA885031F532B4E00E12FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA885051F532B4E00E12FD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			children = (
 				5ACCC15E1F698B6B009B5CD0 /* Utils */,
 				5AA885031F532B4E00E12FD5 /* AppDelegate.swift */,
+				5A529DD91F6B08DA009F2EE5 /* MainTabBarController.swift */,
+				5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */,
 				5AA885051F532B4E00E12FD5 /* ViewController.swift */,
 				5AA885071F532B4E00E12FD5 /* Main.storyboard */,
 				5AA8850A1F532B4E00E12FD5 /* Assets.xcassets */,
@@ -229,6 +235,8 @@
 			files = (
 				5AA885061F532B4E00E12FD5 /* ViewController.swift in Sources */,
 				5ACCC1601F698BA7009B5CD0 /* Extensions.swift in Sources */,
+				5A529DDA1F6B08DA009F2EE5 /* MainTabBarController.swift in Sources */,
+				5A529DDC1F6B0B2F009F2EE5 /* UserProfileController.swift in Sources */,
 				5AA885041F532B4E00E12FD5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

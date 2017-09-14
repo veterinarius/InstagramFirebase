@@ -123,7 +123,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             guard let uploadData = UIImageJPEGRepresentation(image, 0.3) else { return }
             
-            let filename = NSUUID().uuidString
+            let filename = UUID().uuidString.lowercased()
             FIRStorage.storage().reference().child("profile_images").child(filename).put(uploadData, metadata: nil, completion: { (metadata, err) in
                 
                 if let err = err {

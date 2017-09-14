@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+        window = UIWindow()
+        window?.rootViewController = MainTabBarController()
+        
         // Override point for customization after application launch.
         return true
     }
