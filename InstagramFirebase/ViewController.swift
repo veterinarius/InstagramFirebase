@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return button
     }()
     
-    func handleplusButton() {
+    @objc func handleplusButton() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
@@ -57,7 +57,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return tf
     }()
     
-    func handleTextInputChange() {
+    @objc func handleTextInputChange() {
         let isFormValid = emailTextField.text?.characters.count ?? 0 > 0 && userNameTextField.text?.characters.count ?? 0 > 0 && passwordTextField.text?.characters.count ?? 0 > 0
         
         if isFormValid {
@@ -105,7 +105,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return button
     }()
     
-    func handleSignUp() {
+    @objc func handleSignUp() {
         guard let email = emailTextField.text, email.characters.count > 0 else { return }
         guard let username = userNameTextField.text, username.characters.count > 0 else { return }
         guard let password = passwordTextField.text, password.characters.count > 0 else { return }
