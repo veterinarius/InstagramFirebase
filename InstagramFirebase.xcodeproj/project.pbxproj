@@ -11,6 +11,7 @@
 		5A0840151F6D9A4200F0AB1C /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0840141F6D9A4200F0AB1C /* UserProfileHeader.swift */; };
 		5A529DDA1F6B08DA009F2EE5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529DD91F6B08DA009F2EE5 /* MainTabBarController.swift */; };
 		5A529DDC1F6B0B2F009F2EE5 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */; };
+		5A53F2EF1F813C9F009E559E /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53F2EE1F813C9F009E559E /* PhotoSelectorController.swift */; };
 		5AA885041F532B4E00E12FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA885031F532B4E00E12FD5 /* AppDelegate.swift */; };
 		5AA885061F532B4E00E12FD5 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA885051F532B4E00E12FD5 /* SignUpController.swift */; };
 		5AA885091F532B4E00E12FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA885071F532B4E00E12FD5 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		5A0840141F6D9A4200F0AB1C /* UserProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		5A529DD91F6B08DA009F2EE5 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		5A53F2EE1F813C9F009E559E /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		5AA885001F532B4E00E12FD5 /* InstagramFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA885031F532B4E00E12FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA885051F532B4E00E12FD5 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -55,11 +57,18 @@
 		5A0840131F6D9A1300F0AB1C /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				5AF183661F743D4600EA7039 /* Login */,
 				5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */,
 				5A0840141F6D9A4200F0AB1C /* UserProfileHeader.swift */,
 			);
 			name = UserProfile;
+			sourceTree = "<group>";
+		};
+		5A53F2ED1F813C64009E559E /* AddPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				5A53F2EE1F813C9F009E559E /* PhotoSelectorController.swift */,
+			);
+			name = AddPhoto;
 			sourceTree = "<group>";
 		};
 		5AA884F71F532B4E00E12FD5 = {
@@ -83,15 +92,17 @@
 		5AA885021F532B4E00E12FD5 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				5A53F2ED1F813C64009E559E /* AddPhoto */,
+				5AF183661F743D4600EA7039 /* Login */,
 				5A0840131F6D9A1300F0AB1C /* UserProfile */,
 				5ACCC15E1F698B6B009B5CD0 /* Utils */,
 				5AA885031F532B4E00E12FD5 /* AppDelegate.swift */,
 				5A529DD91F6B08DA009F2EE5 /* MainTabBarController.swift */,
 				5AA885071F532B4E00E12FD5 /* Main.storyboard */,
-				5AA8850A1F532B4E00E12FD5 /* Assets.xcassets */,
 				5AA8850C1F532B4E00E12FD5 /* LaunchScreen.storyboard */,
 				5AA8850F1F532B4E00E12FD5 /* Info.plist */,
 				5ACCC1611F69974E009B5CD0 /* GoogleService-Info.plist */,
+				5AA8850A1F532B4E00E12FD5 /* Assets.xcassets */,
 			);
 			path = InstagramFirebase;
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 				5A529DDC1F6B0B2F009F2EE5 /* UserProfileController.swift in Sources */,
 				5AA885041F532B4E00E12FD5 /* AppDelegate.swift in Sources */,
 				5AF183681F743D7400EA7039 /* LoginController.swift in Sources */,
+				5A53F2EF1F813C9F009E559E /* PhotoSelectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
