@@ -80,7 +80,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
             }
         }))
         
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Zurück", style: .cancel, handler: nil))
         
         present(alertController, animated: true, completion: nil)
     }

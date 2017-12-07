@@ -58,7 +58,8 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     }()
     
     @objc func handleTextInputChange() {
-        let isFormValid = emailTextField.text?.characters.count ?? 0 > 0 && userNameTextField.text?.characters.count ?? 0 > 0 && passwordTextField.text?.characters.count ?? 0 > 0
+        
+        let isFormValid = emailTextField.text?.utf8.count ?? 0 > 0 && userNameTextField.text?.utf8.count ?? 0 > 0 && passwordTextField.text?.utf8.count ?? 0 > 0
         
         if isFormValid {
             signUpButton.isEnabled = true
@@ -106,9 +107,9 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
     }()
     
     @objc func handleSignUp() {
-        guard let email = emailTextField.text, email.characters.count > 0 else { return }
-        guard let username = userNameTextField.text, username.characters.count > 0 else { return }
-        guard let password = passwordTextField.text, password.characters.count > 0 else { return }
+        guard let email = emailTextField.text, email.utf8.count > 0 else { return }
+        guard let username = userNameTextField.text, username.utf8.count > 0 else { return }
+        guard let password = passwordTextField.text, password.utf8.count > 0 else { return }
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
             

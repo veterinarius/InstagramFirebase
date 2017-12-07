@@ -50,7 +50,7 @@ class LoginController: UIViewController {
     }()
     
     @objc func handleTextInputChange() {
-        let isFormValid = emailTextField.text?.characters.count ?? 0 > 0
+        let isFormValid = emailTextField.text?.utf8.count ?? 0 > 0
         
         if isFormValid {
             loginButton.isEnabled = true
