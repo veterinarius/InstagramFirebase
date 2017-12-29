@@ -16,6 +16,8 @@
 		5A529DDC1F6B0B2F009F2EE5 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */; };
 		5A53F2EF1F813C9F009E559E /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A53F2EE1F813C9F009E559E /* PhotoSelectorController.swift */; };
 		5A74C54A1FDA8C78003B0356 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74C5491FDA8C78003B0356 /* CustomImageView.swift */; };
+		5A74E32A1FF686DC00C7FF21 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74E3291FF686DC00C7FF21 /* HomeController.swift */; };
+		5A74E32C1FF688F300C7FF21 /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A74E32B1FF688F300C7FF21 /* HomePostCell.swift */; };
 		5AA885041F532B4E00E12FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA885031F532B4E00E12FD5 /* AppDelegate.swift */; };
 		5AA885061F532B4E00E12FD5 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA885051F532B4E00E12FD5 /* SignUpController.swift */; };
 		5AA885091F532B4E00E12FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA885071F532B4E00E12FD5 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		5A529DDB1F6B0B2F009F2EE5 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		5A53F2EE1F813C9F009E559E /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		5A74C5491FDA8C78003B0356 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		5A74E3291FF686DC00C7FF21 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		5A74E32B1FF688F300C7FF21 /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		5AA885001F532B4E00E12FD5 /* InstagramFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA885031F532B4E00E12FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA885051F532B4E00E12FD5 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 			name = AddPhoto;
 			sourceTree = "<group>";
 		};
+		5A74E3281FF686AA00C7FF21 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5A74E3291FF686DC00C7FF21 /* HomeController.swift */,
+				5A74E32B1FF688F300C7FF21 /* HomePostCell.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		5AA884F71F532B4E00E12FD5 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 		5AA885021F532B4E00E12FD5 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				5A74E3281FF686AA00C7FF21 /* Home */,
 				5A1129651FD98B090070B0AD /* Models */,
 				5A53F2ED1F813C64009E559E /* AddPhoto */,
 				5AF183661F743D4600EA7039 /* Login */,
@@ -305,8 +319,10 @@
 				5A529DDC1F6B0B2F009F2EE5 /* UserProfileController.swift in Sources */,
 				5AA885041F532B4E00E12FD5 /* AppDelegate.swift in Sources */,
 				5AF183681F743D7400EA7039 /* LoginController.swift in Sources */,
+				5A74E32C1FF688F300C7FF21 /* HomePostCell.swift in Sources */,
 				5AE317B21FCC984F006B4B65 /* PhotoSelectorHeader.swift in Sources */,
 				5A53F2EF1F813C9F009E559E /* PhotoSelectorController.swift in Sources */,
+				5A74E32A1FF686DC00C7FF21 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
