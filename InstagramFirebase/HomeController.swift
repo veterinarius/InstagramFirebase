@@ -27,23 +27,33 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     fileprivate func fetchPosts() {
         guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
         
-        let ref = FIRDatabase.database().reference().child("posts").child(uid)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionaries = snapshot.value as? [String: Any] else {return}
+        FIRDatabase.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
             
-            dictionaries.forEach({ (key, value) in
-                guard let dictionary = value as? [String: Any] else {return}
+            guard let userDictionary = snapshot.value as? [String: Any]
+                else {return}
+            
+            let user = User(dictionary: userDictionary)
+            
+            let ref = FIRDatabase.database().reference().child("posts").child(uid)
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let dictionaries = snapshot.value as? [String: Any] else {return}
                 
-                let post =  Post(dictionary: dictionary)
-                self.posts.append(post)
-            })
-            
-            self.collectionView?.reloadData()
+                dictionaries.forEach({ (key, value) in
+                    guard let dictionary = value as? [String: Any] else {return}
+                    
+                    let post = Post(user: user , dictionary: dictionary)
+                    self.posts.append(post)
+                })
+                
+                self.collectionView?.reloadData()
+                
+            }) { (err) in
+                print("Failed to fetch posts:", err)
+            }
             
         }) { (err) in
-            print("Failed to fetch posts:", err)
+            print("Failed to fetch user for posts:", err)
         }
-        
     }
     
     func setupNavigationItems() {
