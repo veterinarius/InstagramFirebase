@@ -25,6 +25,8 @@
 		5AA885091F532B4E00E12FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA885071F532B4E00E12FD5 /* Main.storyboard */; };
 		5AA8850B1F532B4E00E12FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8850A1F532B4E00E12FD5 /* Assets.xcassets */; };
 		5AA8850E1F532B4E00E12FD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA8850C1F532B4E00E12FD5 /* LaunchScreen.storyboard */; };
+		5AC6814120271C92008B7E4E /* UserSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC6814020271C92008B7E4E /* UserSearchController.swift */; };
+		5AC6814320272251008B7E4E /* UserSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC6814220272251008B7E4E /* UserSearchCell.swift */; };
 		5ACCC1601F698BA7009B5CD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACCC15F1F698BA7009B5CD0 /* Extensions.swift */; };
 		5ACCC1621F69974E009B5CD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ACCC1611F69974E009B5CD0 /* GoogleService-Info.plist */; };
 		5AE2DDEC1FBE252F00CD6189 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2DDEB1FBE252F00CD6189 /* PhotoSelectorCell.swift */; };
@@ -53,6 +55,8 @@
 		5AA8850A1F532B4E00E12FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AA8850D1F532B4E00E12FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AA8850F1F532B4E00E12FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AC6814020271C92008B7E4E /* UserSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchController.swift; sourceTree = "<group>"; };
+		5AC6814220272251008B7E4E /* UserSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCell.swift; sourceTree = "<group>"; };
 		5ACCC15F1F698BA7009B5CD0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5ACCC1611F69974E009B5CD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AE2DDEB1FBE252F00CD6189 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		5AA885021F532B4E00E12FD5 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				5AC6813F20271C69008B7E4E /* Search */,
 				5A74E3281FF686AA00C7FF21 /* Home */,
 				5A1129651FD98B090070B0AD /* Models */,
 				5A53F2ED1F813C64009E559E /* AddPhoto */,
@@ -149,6 +154,15 @@
 				5AA8850A1F532B4E00E12FD5 /* Assets.xcassets */,
 			);
 			path = InstagramFirebase;
+			sourceTree = "<group>";
+		};
+		5AC6813F20271C69008B7E4E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5AC6814020271C92008B7E4E /* UserSearchController.swift */,
+				5AC6814220272251008B7E4E /* UserSearchCell.swift */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		5ACCC15E1F698B6B009B5CD0 /* Utils */ = {
@@ -313,12 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC6814320272251008B7E4E /* UserSearchCell.swift in Sources */,
 				5A70935E1FF8012900D772A7 /* FirebaseUtils.swift in Sources */,
 				5A3455981FD08FD30032B100 /* SharePhotoController.swift in Sources */,
 				5AA885061F532B4E00E12FD5 /* SignUpController.swift in Sources */,
 				5AE2DDEC1FBE252F00CD6189 /* PhotoSelectorCell.swift in Sources */,
 				5A74C54A1FDA8C78003B0356 /* CustomImageView.swift in Sources */,
 				5A1129671FD98B300070B0AD /* Post.swift in Sources */,
+				5AC6814120271C92008B7E4E /* UserSearchController.swift in Sources */,
 				5ACCC1601F698BA7009B5CD0 /* Extensions.swift in Sources */,
 				5A2189361FD996FE00C7153D /* UserProfilePhotoCell.swift in Sources */,
 				5A70935C1FF7ECB100D772A7 /* User.swift in Sources */,
