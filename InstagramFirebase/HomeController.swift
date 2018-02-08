@@ -15,15 +15,61 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateFeed), name: SharePhotoController.updateFeedNotificationName, object: nil)
+        
         collectionView?.backgroundColor = .white
         
         collectionView?.register(HomePostCell.self, forCellWithReuseIdentifier: cellId)
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView?.refreshControl = refreshControl
+        
         setupNavigationItems()
-        fetchPosts()
+        
+        fetchAllPosts()
+        
     }
     
+    @objc func handleUpdateFeed() {
+        handleRefresh()
+    }
+    
+    @objc func handleRefresh() {
+        print("Handling refresh...")
+        posts.removeAll()
+        fetchAllPosts()
+    }
+    
+    fileprivate func fetchAllPosts() {
+        fetchPosts()
+        fetchFollowingUserIds()
+    }
+    
+    fileprivate func fetchFollowingUserIds() {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        FIRDatabase.database().reference().child("following").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let userIdsDictionary = snapshot.value as? [String: Any]
+                else {return}
+            
+            userIdsDictionary.forEach({ (key, value) in
+                FIRDatabase.fetchUserWithUID(uid: key, completion: { (user) in
+                    self.fetchPostsWithUser(user: user)
+                })
+            })
+            
+        }) { (err) in
+            print("Failed to fetch following users ids:", err)
+        }
+    }
+    
+    //iOS9
+    //let refreshControl = UIRefreshControl()
+    
     var posts = [Post]()
+    
     fileprivate func fetchPosts() {
         guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
         
@@ -37,6 +83,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let ref = FIRDatabase.database().reference().child("posts").child(user.uid)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
+            self.collectionView?.refreshControl?.endRefreshing()
+            
             guard let dictionaries = snapshot.value as? [String: Any] else { return }
             
             dictionaries.forEach({ (key, value) in
@@ -46,6 +94,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 self.posts.append(post)
                 
                 })
+            
+            self.posts.sort(by: { (p1, p2) -> Bool in
+                return p1.creationDate.compare(p2.creationDate) == .orderedDescending
+            })
+            
             self.collectionView?.reloadData()
             
         }) { (err) in
