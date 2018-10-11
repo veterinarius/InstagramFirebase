@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol HomePostCellDelegate {
+    func didTapComment(post: Post)
+    func didLike(for cell: HomePostCell)
+}
+
 class HomePostCell: UICollectionViewCell {
+    
+    var delegate: HomePostCellDelegate?
     
     var post: Post? {
         didSet {
             
             guard let postImageUrl = post?.imageUrl else { return }
+            
+            likeButton.setImage(post?.hasLiked == true ? #imageLiteral(resourceName: "like_selected").withRenderingMode(.alwaysOriginal) : #imageLiteral(resourceName: "like_unselected").withRenderingMode(.alwaysOriginal), for: .normal)
             
             photoImageView.loadImage(urlString: postImageUrl)
             
@@ -72,17 +81,30 @@ class HomePostCell: UICollectionViewCell {
         return button
     }()
     
-    let likeButton: UIButton = {
+    lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "like_unselected") .withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
         return button
     }()
     
-    let commentButton: UIButton = {
+    @objc func handleLike() {
+        print("handling Like...")
+        delegate?.didLike(for: self)
+    }
+    
+    lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "comment") .withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleComment), for: .touchUpInside)
         return button
     }()
+    
+    @objc func handleComment() {
+        print("Schreibe einen Kommentar...")
+        guard let post = self.post else { return }
+        delegate?.didTapComment(post: post)
+    }
     
     let sendMessageButton: UIButton = {
         let button = UIButton(type: .system)
